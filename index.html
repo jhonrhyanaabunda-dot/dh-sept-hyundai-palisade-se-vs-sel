@@ -396,12 +396,6 @@
     font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--blue-deep);
   }
-  .hero-photo.full-bleed .credit {
-    position: absolute;
-    bottom: 24px; right: clamp(20px, 4vw, 56px);
-    color: var(--white);
-    text-shadow: 0 1px 8px rgba(0,0,0,.45);
-  }
 
   /* ---------- Article body grid (sticky TOC + column) ---------- */
   .article-grid {
@@ -481,7 +475,7 @@
   .gutter .chip .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
   /* ---------- Section + typography ---------- */
-  section.s { scroll-margin-top: 32px; padding: 64px 0; border-top: 1px solid var(--rule); }
+  section.s { scroll-margin-top: 32px; padding: 52px 0; border-top: 1px solid var(--rule); }
   section.s:first-of-type { border-top: none; padding-top: 8px; }
   .section-num {
     display: flex; align-items: baseline; gap: 16px;
@@ -541,6 +535,7 @@
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
+  blockquote.pull:last-child { margin-bottom: 0; border-bottom: none; }
   blockquote.pull cite {
     display: block;
     margin-top: 24px;
@@ -612,7 +607,8 @@
   .spec-strip .item:last-child { border-right: none; padding-right: 0; }
   .spec-strip .num { font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1.05; color: var(--blue-deep); letter-spacing: -0.015em; font-feature-settings: "lnum"; min-height: calc(38px * 1.05); margin-bottom: 14px; }
   .spec-strip .num small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 3px; letter-spacing: 0; }
-  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2); display: flex; align-items: flex-start; }
+  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2);
+    display: block; }
 
   /* Stats variant: short numeric headers, bigger type, centered, modest breakout */
   .spec-strip.stats {
@@ -625,7 +621,8 @@
   .spec-strip.stats .item:last-child { padding-right: 16px; }
   .spec-strip.stats .num { font-size: 44px; line-height: 1; min-height: 48px; margin-bottom: 24px; white-space: nowrap; }
   .spec-strip.stats .num small { font-size: 15px; letter-spacing: 0; margin-left: 4px; }
-  .spec-strip.stats .lbl { min-height: calc(11px * 1.5 * 5); display: flex; align-items: flex-start; justify-content: center; text-align: center; }
+  .spec-strip.stats .lbl { min-height: calc(11px * 1.5 * 5);
+    display: block; text-align: center; }
 
   /* ---------- Safety badge ---------- */
   .safety-banner {
@@ -729,11 +726,12 @@
   }
   .cross-table table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     font-size: 14px;
   }
   .cross-table thead th {
-    text-align: center;
+    text-align: left;
     padding: 18px 16px;
     font-size: 11px;
     letter-spacing: 0.16em;
@@ -744,7 +742,6 @@
     background: var(--paper-2);
     vertical-align: top;
   }
-  .cross-table thead th:first-child { text-align: left; }
   .cross-table thead th .model {
     display: block;
     font-family: var(--display);
@@ -786,9 +783,10 @@
     text-transform: uppercase;
     color: var(--muted);
     font-weight: 600;
-    width: 22%;
+    width: 27%;
     background: var(--paper-2);
   }
+  .cross-table col.compare { width: 36.5%; }
   .cross-table tbody td {
     font-family: var(--display);
     font-size: 15px;
@@ -1284,7 +1282,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="pip"></span> Trim Comparison · Dalton Hyundai National City</div>
     <h1>Palisade SE vs SEL, <em>the trim decision explained.</em></h1>
-    <p class="deck">The Hyundai Palisade SE is the entry trim, and the SEL sits one step up, adding comfort and convenience. Both seat up to eight. Compare them side by side at Dalton Hyundai National City, 3150 National City Blvd, right off I-5 between downtown San Diego and Chula Vista, or call our sales team at <a class="tel" href="tel:+16194523217">(619) 452-3217</a>.</p>
+    <p class="deck">The Palisade SE is the entry trim; the SEL sits one step up, adding comfort and convenience. Both seat up to eight. Compare them at 3150 National City Blvd, or call <a class="tel" href="tel:+16194523217">(619) 452-3217</a>.</p>
 
     <div class="hero-meta">
       <div class="item"><div class="lbl">Address</div><div class="val">3150 National City Blvd<small>National City, CA 91950</small></div></div>
@@ -1302,7 +1300,6 @@
          fetchpriority="high"
          width="1458"
          height="729" />
-    <span class="credit">DALTON HYUNDAI NATIONAL CITY · PALISADE</span>
     <figcaption class="visually-hidden">A Hyundai Palisade three-row SUV at Dalton Hyundai National City, where shoppers compare the SE and SEL trims near San Diego, serving Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach.</figcaption>
   </figure>
 </header>
@@ -1335,13 +1332,16 @@
         <div class="section-num"><span>01</span><span>From the sales floor</span></div>
         <h2 class="section-h">Palisade SE vs SEL, <em>at a glance</em>.</h2>
         <p class="lede">If you are cross-shopping the 2026 Hyundai Palisade SE vs SEL, this page walks through what actually separates the two trims, who each one fits, and how to confirm the current specs before you buy.</p>
-        <p>Here is the short version. The SE is the value entry. The SEL is the comfort-and-tech step-up most families land on. The SE covers the core three-row package; the SEL adds convenience and comfort features like upgraded seating materials, more advanced climate controls, and additional driver-assist tech. Both seat up to eight. Pick the SE to spend less, the SEL for daily comfort.</p>
+        <p>The short version: the SE is the value entry, and the SEL is the comfort-and-tech step-up most families land on. The SE covers the core three-row package; the SEL adds upgraded seating, more advanced climate controls, and extra driver-assist tech.</p>
+
+        <p>Both seat up to eight. Pick the SE to spend less, the SEL for daily comfort.</p>
 
         <p>We are Dalton Hyundai National City, at 3150 National City Blvd, National City, CA 91950, and we sell and service the full Palisade lineup. We are rated 4.3 stars across <a href="https://www.google.com/search?q=dalton+hyundai+national+city#lrd=0x80d9520d83a0b671:0xe6ab01ea0342063,1,,,," rel="noopener" target="_blank">2,596 Google reviews</a>, and our sales team is open Monday to Friday 9:00 AM to 8:00 PM, Saturday 8:00 AM to 8:00 PM, and Sunday 10:00 AM to 6:00 PM.</p>
 
         <!-- Desktop: comparison table -->
         <div class="cross-table">
           <table>
+            <colgroup><col><col class="compare"><col class="compare"></colgroup>
             <thead>
               <tr>
                 <th><span class="visually-hidden">Factor</span></th>
@@ -1358,34 +1358,34 @@
             </thead>
             <tbody>
               <tr>
-                <th>Position in lineup</th>
+                <th>Lineup slot</th>
                 <td data-label="Palisade SE">Entry trim</td>
                 <td class="featured" data-label="Palisade SEL">One step above SE</td>
               </tr>
               <tr>
                 <th>Seating</th>
                 <td data-label="Palisade SE">Up to 8</td>
-                <td class="featured" data-label="Palisade SEL">Up to 8 (captain's chairs often optional)</td>
+                <td class="featured" data-label="Palisade SEL">Up to 8, captain's opt.</td>
               </tr>
               <tr>
                 <th>Typical feel</th>
-                <td data-label="Palisade SE">Core, no-frills family hauler</td>
-                <td class="featured" data-label="Palisade SEL">Added comfort and convenience</td>
+                <td data-label="Palisade SE">No-frills family hauler</td>
+                <td class="featured" data-label="Palisade SEL">Added comfort features</td>
               </tr>
               <tr>
                 <th>Driver assist</th>
-                <td data-label="Palisade SE">SmartSense standard safety suite</td>
-                <td class="featured" data-label="Palisade SEL">SmartSense plus added convenience tech</td>
+                <td data-label="Palisade SE">SmartSense safety suite</td>
+                <td class="featured" data-label="Palisade SEL">SmartSense plus comfort</td>
               </tr>
               <tr>
-                <th>Bluelink connectivity</th>
+                <th>Bluelink</th>
                 <td data-label="Palisade SE">Available</td>
                 <td class="featured" data-label="Palisade SEL">Available</td>
               </tr>
               <tr>
                 <th>Best for</th>
                 <td data-label="Palisade SE">Budget-focused buyers</td>
-                <td class="featured" data-label="Palisade SEL">Buyers who want daily comfort upgrades</td>
+                <td class="featured" data-label="Palisade SEL">Buyers wanting comfort</td>
               </tr>
               <tr>
                 <th>Pricing</th>
@@ -1422,7 +1422,7 @@
             <dl class="cross-card__specs">
               <div class="cross-card__row"><dt>Position</dt><dd>Entry trim</dd></div>
               <div class="cross-card__row"><dt>Seating</dt><dd>Up to 8</dd></div>
-              <div class="cross-card__row"><dt>Typical feel</dt><dd>Core, no-frills family hauler</dd></div>
+              <div class="cross-card__row"><dt>Typical feel</dt><dd>No-frills family hauler</dd></div>
               <div class="cross-card__row"><dt>Driver assist</dt><dd>SmartSense standard</dd></div>
               <div class="cross-card__row"><dt>Bluelink</dt><dd>Available</dd></div>
               <div class="cross-card__row"><dt>Best for</dt><dd>Budget-focused buyers</dd></div>
@@ -1448,7 +1448,7 @@
         <p class="lede">The SE is the foundation of the Palisade range, and it carries more of the Palisade's value than most shoppers expect.</p>
         <p>It includes Hyundai SmartSense, the standard suite of driver-assistance and safety features. It carries the same three-row, eight-passenger body as higher trims. For a buyer who wants the Palisade's space and reputation without paying for extras, the SE is the logical start.</p>
 
-        <p>Most SE shoppers are after the size and the warranty more than the toys. That is a reasonable read. The Palisade's value lives in its three-row cabin room and Hyundai's coverage, both of which the SE has in full, including the 10-year/100,000-mile powertrain limited warranty and the 5-year/60,000-mile new-vehicle limited warranty.</p>
+        <p>Most SE shoppers are after the size and the warranty more than the toys, which is a reasonable read. The Palisade's value lives in its three-row cabin and Hyundai's coverage, and the SE has both in full: a 10-year/100,000-mile powertrain and 5-year/60,000-mile new-vehicle limited warranty.</p>
 
         <div class="spec-strip centered">
           <div class="item"><div class="num">8<small> seats</small></div><div class="lbl">Three-row seating in both trims</div></div>
@@ -1534,7 +1534,7 @@
         <div class="section-num"><span>05</span><span>On the lot</span></div>
         <h2 class="section-h">What we see <em>on the lot</em>.</h2>
         <p class="lede">Our sales team walked the current 2026 Palisade inventory before writing this, and we found the SE-to-SEL gap is easier to feel than to read on a spec sheet.</p>
-        <p>Our team recently pulled two 2026 Palisades side by side, inspected the seating surfaces and climate controls on each, and confirmed the SEL's cabin upgrades land mostly in the front-row touchpoints a driver uses every day. We also verified that both trims kept the same SmartSense safety baseline, and that both carry the same Hyundai 5-year/60,000-mile new-vehicle and 10-year/100,000-mile powertrain coverage.</p>
+        <p>Our team pulled two 2026 Palisades side by side and inspected the seating surfaces and climate controls on each. The SEL's cabin upgrades land mostly in the front-row touchpoints a driver uses daily. Both trims keep the same SmartSense baseline and the same Hyundai warranty coverage.</p>
 
         <p>Recently, a shopper came in set on the 2026 Palisade SE to save money, then sat in an SEL for ten minutes and changed course. The deciding factor was not horsepower or screen size. It was the climate and seating comfort on a long commute, which is exactly where the SEL earns its step-up.</p>
 
@@ -1572,7 +1572,7 @@
         <h2 class="section-h">Where we are, and <em>who we serve</em>.</h2>
         <p class="lede">We are at <strong>3150 National City Blvd, National City, CA 91950</strong>, an easy drive for shoppers across San Diego County.</p>
 
-        <p>Buyers come to us from National City, San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach, all within a short hop of our location on National City Blvd. From the South Bay you're a few minutes up the I-5; from El Cajon or Kearny Mesa, the 805 and the 8 bring you right in. If you've been comparing Palisade trims anywhere in the metro, we're a convenient stop right off the freeway.</p>
+        <p>Buyers come to us from National City, San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach. From the South Bay you're a few minutes up the I-5; from El Cajon or Kearny Mesa, the 805 and the 8 bring you right in.</p>
 
         <div class="spec-strip stats">
           <div class="item"><div class="num"><a class="tel" href="https://www.google.com/search?q=dalton+hyundai+national+city#lrd=0x80d9520d83a0b671:0xe6ab01ea0342063,1,,,," rel="noopener" target="_blank">4.3<small> ★</small></a></div><div class="lbl"><a class="tel" href="https://www.google.com/search?q=dalton+hyundai+national+city#lrd=0x80d9520d83a0b671:0xe6ab01ea0342063,1,,,," rel="noopener" target="_blank">Google rating across 2,596 reviews</a></div></div>
@@ -1588,7 +1588,9 @@
           <li><strong>Parts:</strong> Mon-Fri 7:00 AM - 6:00 PM · Sat 8:00 AM - 5:00 PM · Sun closed</li>
         </ul>
 
-        <p>One of the conveniences of buying here: we're open for Sunday sales from 10:00 AM to 6:00 PM, so you can compare an SE and an SEL on a day most people actually have free. Service and parts are closed Sundays, so if you need a question answered by a technician, plan a Saturday visit before the 5:00 PM close. Reach sales at <a class="tel" href="tel:+16194523217">(619) 452-3217</a>, service at <a class="tel" href="tel:+16193145768">(619) 314-5768</a>, and parts at <a class="tel" href="tel:+16196040487">(619) 604-0487</a>.</p>
+        <p>We're open for Sunday sales from 10:00 AM to 6:00 PM, so you can compare an SE and an SEL on a day most people have free. Service and parts are closed Sundays; for a technician's answer, plan a Saturday visit before the 5:00 PM close.</p>
+
+        <p>Reach sales at <a class="tel" href="tel:+16194523217">(619) 452-3217</a>, service at <a class="tel" href="tel:+16193145768">(619) 314-5768</a>, and parts at <a class="tel" href="tel:+16196040487">(619) 604-0487</a>.</p>
       </section>
     </div>
 
@@ -1624,7 +1626,7 @@
   <div class="wrap">
     <div class="eyebrow">Dalton Hyundai National City</div>
     <h2>A dealership you can <em>check out before you trust it</em>.</h2>
-    <p class="band-deck">Formerly Frank Hyundai, Dalton Hyundai National City has long served drivers throughout San Diego, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach, led by General Manager Cedric Butler, with sales managed by Sergio Martell and Mark Moore.</p>
+    <p class="band-deck">Formerly Frank Hyundai, Dalton Hyundai National City serves drivers across San Diego, Chula Vista, El Cajon, and Imperial Beach. General Manager Cedric Butler leads the store, with sales managed by Sergio Martell and Mark Moore.</p>
 
     <div class="trust-grid">
       <div class="item">
@@ -1779,7 +1781,13 @@
           <div style="font-size:12px; color:var(--muted); margin-top:10px; letter-spacing:0.04em;">Dalton Hyundai National City · 3150 National City Blvd, National City, CA 91950</div>
         </div>
 
-        <p style="font-size:15px; color:var(--ink-soft); max-width:660px;">Palisade SE and SEL trim contents described from Hyundai's published model information and our team's September 2026 lot inspection. Trim contents and option packages change by model year and should be verified at hyundaiusa.com. Fuel-economy figures should be verified at fueleconomy.gov. Trim-by-trim value and owner reviews are published by Kelley Blue Book and Edmunds. Pricing and incentives change frequently, for current offers on a specific build, call Sales at <a class="tel" href="tel:+16194523217"><strong>(619) 452-3217</strong></a>.</p>
+        <ul class="bullets" style="font-size:15px; color:var(--ink-soft); max-width:660px;">
+          <li><strong>Trim contents.</strong> SE and SEL details come from Hyundai's published model information and our team's September 2026 lot inspection; verify at hyundaiusa.com.</li>
+          <li><strong>Fuel economy.</strong> Verify figures at fueleconomy.gov.</li>
+          <li><strong>Value &amp; reviews.</strong> Trim-by-trim value and owner reviews are published by Kelley Blue Book and Edmunds.</li>
+        </ul>
+
+        <p style="font-size:15px; color:var(--ink-soft); max-width:660px;">Pricing and incentives change frequently. For current offers on a specific build, call Sales at <a class="tel" href="tel:+16194523217"><strong>(619) 452-3217</strong></a>.</p>
 
         <p style="font-size:15px; color:var(--ink-soft); max-width:660px;"><em>If a question about the Hyundai Palisade SE or SEL at Dalton Hyundai National City is not answered here, call <a class="tel" href="tel:+16194523217">(619) 452-3217</a> and ask for a sales advisor, or browse inventory at <a href="https://www.hyundaidalton.com/" rel="noopener">hyundaidalton.com</a>.</em></p>
 
