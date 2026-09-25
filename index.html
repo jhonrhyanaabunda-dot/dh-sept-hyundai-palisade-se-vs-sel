@@ -20,9 +20,9 @@
 <meta property="og:description" content="The Palisade SE is the entry trim; the SEL adds comfort and convenience features. Both seat up to eight. Compare the two trims at Dalton Hyundai National City near San Diego." />
 <meta property="og:url" content="https://www.hyundaidalton.com/hyundai-palisade-se-vs-sel/" />
 <meta property="og:site_name" content="Dalton Hyundai National City" />
-<meta property="og:image" content="hyundai-palisade-se-vs-sel.webp" />
-<meta property="og:image:width" content="1600" />
-<meta property="og:image:height" content="800" />
+<meta property="og:image" content="palisade-hero-2026.jpg" />
+<meta property="og:image:width" content="1500" />
+<meta property="og:image:height" content="564" />
 <meta property="og:locale" content="en_US" />
 <meta property="article:published_time" content="2026-09-01T00:00:00-07:00" />
 <meta property="article:modified_time" content="2026-09-01T00:00:00-07:00" />
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Hyundai Palisade SE vs SEL: Trim Comparison | Dalton Hyundai National City" />
 <meta name="twitter:description" content="The Palisade SE is the entry trim; the SEL adds comfort and convenience features. Both seat up to eight. Compare the two trims at Dalton Hyundai National City near San Diego." />
-<meta name="twitter:image" content="hyundai-palisade-se-vs-sel.webp" />
+<meta name="twitter:image" content="palisade-hero-2026.jpg" />
 
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -49,7 +49,7 @@
       "@id": "https://www.hyundaidalton.com/hyundai-palisade-se-vs-sel/#article",
       "headline": "Hyundai Palisade SE vs SEL: Trim Comparison",
       "description": "The Hyundai Palisade SE is the entry trim, and the SEL sits one step up, adding comfort and convenience features. Both seat up to eight. Dalton Hyundai National City walks through what separates the two trims and how to verify current specs before you buy.",
-      "image": "hyundai-palisade-se-vs-sel.webp",
+      "image": "palisade-hero-2026.jpg",
       "datePublished": "2026-09-01T00:00:00-07:00",
       "dateModified": "2026-09-01T00:00:00-07:00",
       "author": {
@@ -363,7 +363,7 @@
       margin-left: 0;
       margin-right: 0;
       margin-top: 32px;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 9;
     }
   }
   .hero-photo::before {
@@ -1258,6 +1258,37 @@
     }
     .btn:hover .arrow { transform: none; }
   }
+
+  /* ---------- Photo carousel ---------- */
+  .carousel { margin: 36px 0; }
+  .carousel-frame { position: relative; }
+  .carousel-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; border-radius: var(--radius-md); scrollbar-width: none; }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-slide { flex: 0 0 100%; scroll-snap-align: center; position: relative; }
+  .carousel-slide img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: var(--radius-md); }
+  .carousel-slide .slide-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 18px 14px; color: #fff; font-size: 13px; line-height: 1.45; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.6) 100%); border-radius: 0 0 var(--radius-md) var(--radius-md); }
+  .carousel-slide .slide-cap span { display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.9; }
+  .carousel-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 999px; border: none; background: rgba(255,255,255,.92); color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+  .carousel-nav:hover { background: #fff; }
+  .carousel-nav.prev { left: 12px; }
+  .carousel-nav.next { right: 12px; }
+  .carousel-nav svg { width: 20px; height: 20px; }
+  .carousel-dots { display: flex; gap: 8px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+  .carousel-dots button { width: 8px; height: 8px; border-radius: 999px; border: none; padding: 0; background: var(--rule); cursor: pointer; transition: width .2s, background .2s; }
+  .carousel-dots button[aria-current="true"] { background: var(--ink); width: 22px; }
+  .carousel-caption { margin-top: 12px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+  .carousel-caption strong { color: var(--ink); font-weight: 600; }
+  @supports not (aspect-ratio: 4 / 3) { .carousel-slide img { height: auto; } }
+
+  /* ---------- Body photos and video ---------- */
+  .body-media { margin: 36px 0; }
+  .body-media .full-img { margin: 0; }
+  .body-media video { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: var(--radius-md); background: #000; }
+  .body-media figcaption { margin-top: 10px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+  @media (max-width: 760px) {
+    .carousel-nav { width: 34px; height: 34px; }
+    .carousel-slide .slide-cap { font-size: 12px; padding: 28px 14px 12px; }
+  }
 </style>
 </head>
 <body>
@@ -1281,12 +1312,12 @@
 
   <figure class="hero-photo full-bleed" role="img" aria-label="Hyundai Palisade at Dalton Hyundai National City">
     <img class="scene"
-         src="hyundai-palisade-se-vs-sel.webp"
-         alt="A Hyundai Palisade three-row SUV at Dalton Hyundai National City, where shoppers compare the SE and SEL trims near San Diego"
+         src="palisade-hero-2026.jpg"
+         alt="A dark blue Hyundai Palisade parked on a desert road with mountains in the distance, the three-row SUV shoppers compare in SE and SEL trim at Dalton Hyundai National City"
          loading="eager"
          fetchpriority="high"
-         width="1458"
-         height="729" />
+         width="1500"
+         height="564" />
     <figcaption class="visually-hidden">A Hyundai Palisade three-row SUV at Dalton Hyundai National City, where shoppers compare the SE and SEL trims near San Diego, serving Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach.</figcaption>
   </figure>
 </header>
@@ -1434,6 +1465,13 @@
 
         <p>Most SE buyers are after the size and the warranty more than the toys. The SE has both in full: a 10-year/100,000-mile powertrain and 5-year/60,000-mile new-vehicle limited warranty.</p>
 
+        <figure class="body-media">
+          <div class="full-img has-photo">
+            <img class="scene" src="palisade-front-desert.jpg" width="595" height="396" loading="lazy" alt="A dark blue Hyundai Palisade seen from the front and side on a desert road" />
+          </div>
+          <figcaption>Both trims share the same three-row body. The differences are inside the cabin.</figcaption>
+        </figure>
+
         <div class="spec-strip centered">
           <div class="item"><div class="num">8<small> seats</small></div><div class="lbl">Three-row seating in both trims</div></div>
           <div class="item"><div class="num">10<small> yr</small></div><div class="lbl">100,000-mile powertrain limited warranty</div></div>
@@ -1483,6 +1521,13 @@
           </article>
         </div>
 
+        <figure class="body-media">
+          <div class="full-img has-photo">
+            <img class="scene" src="palisade-rolling-rear.jpg" width="595" height="394" loading="lazy" alt="A dark blue Hyundai Palisade driving away from the camera on an open desert road" />
+          </div>
+          <figcaption>Ask to drive an SE and an SEL back to back. That is the quickest way to tell whether the SEL upgrades matter to you.</figcaption>
+        </figure>
+
         <h3 style="margin-top:44px;">A useful tiebreaker: resale and feature expectations</h3>
         <p>A useful tiebreaker is resale and feature expectations. Our sales team can walk you through how each trim tends to hold its value in this market, along with the feature differences that matter most down the road. Ask us before you decide.</p>
 
@@ -1504,6 +1549,50 @@
         <h2 class="section-h">What we see <em>on the lot</em>.</h2>
         <p class="lede">Our sales team double checked our current 2026 Palisade inventory before writing this, and we found the SE-to-SEL gap is easier to feel than to read about.</p>
         <p>We pulled two 2026 Palisades side by side and found the SEL's cabin upgrades sit mostly in the front-row touchpoints a driver uses daily. Both trims share the same SmartSense baseline and warranty coverage.</p>
+
+        <figure class="carousel" id="palisade-carousel" aria-roledescription="carousel" aria-label="Hyundai Palisade photo gallery">
+          <div class="carousel-frame">
+            <div class="carousel-track" tabindex="0">
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 8">
+                <img src="carousel/palisade-01.jpg" width="1200" height="900" loading="lazy" alt="A 2026 Hyundai Palisade photographed from the front and side against a plain studio backdrop.">
+                <div class="slide-cap"><span>1 &middot; Front three-quarter</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 8">
+                <img src="carousel/palisade-02.jpg" width="1200" height="900" loading="lazy" alt="The side profile of a 2026 Hyundai Palisade, showing the full three-row body length.">
+                <div class="slide-cap"><span>2 &middot; Side profile</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 8">
+                <img src="carousel/palisade-03.jpg" width="1200" height="900" loading="lazy" alt="A 2026 Hyundai Palisade from the rear and side, showing the tailgate and tail lights.">
+                <div class="slide-cap"><span>3 &middot; Rear three-quarter</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 8">
+                <img src="carousel/palisade-04.jpg" width="1200" height="900" loading="lazy" alt="The dashboard of a Hyundai Palisade, with the driver display and center touchscreen side by side.">
+                <div class="slide-cap"><span>4 &middot; Dashboard</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 8">
+                <img src="carousel/palisade-05.jpg" width="1200" height="900" loading="lazy" alt="The steering wheel, digital gauge cluster and climate controls of a Hyundai Palisade.">
+                <div class="slide-cap"><span>5 &middot; Driver display</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="6 of 8">
+                <img src="carousel/palisade-06.jpg" width="1200" height="900" loading="lazy" alt="The front seats and center console of a Hyundai Palisade, seen from the second row.">
+                <div class="slide-cap"><span>6 &middot; Front seats</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="7 of 8">
+                <img src="carousel/palisade-07.jpg" width="1200" height="900" loading="lazy" alt="The second-row bench of a Hyundai Palisade, folded down on one side.">
+                <div class="slide-cap"><span>7 &middot; Second row</span></div>
+              </div>
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="8 of 8">
+                <img src="carousel/palisade-08.jpg" width="1200" height="900" loading="lazy" alt="The engine bay of a Hyundai Palisade with the hood open.">
+                <div class="slide-cap"><span>8 &middot; Engine bay</span></div>
+              </div>
+            </div>
+            <button type="button" class="carousel-nav prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button type="button" class="carousel-nav next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <div class="carousel-dots" role="tablist" aria-label="Choose photo"><button type="button" aria-label="Go to photo 1" aria-current="true"></button><button type="button" aria-label="Go to photo 2"></button><button type="button" aria-label="Go to photo 3"></button><button type="button" aria-label="Go to photo 4"></button><button type="button" aria-label="Go to photo 5"></button><button type="button" aria-label="Go to photo 6"></button><button type="button" aria-label="Go to photo 7"></button><button type="button" aria-label="Go to photo 8"></button></div>
+          <figcaption class="carousel-caption"><strong>Photos of the 2026 Palisade.</strong> Swipe or use the arrows. Equipment varies by trim, so check the window sticker on the one you are looking at.</figcaption>
+        </figure>
+
 
         <p>A customer came in set on the SE to save money, then sat in an SEL for ten minutes and changed course. The customer didn't care about horsepower or screen size. Climate control and seating comfort on a long commute sold them.</p>
 
@@ -1727,6 +1816,45 @@
 
     map.forEach((_li, el) => io.observe(el));
   })();
+</script>
+
+<script>
+(function () {
+  var root = document.getElementById('palisade-carousel');
+  if (!root) return;
+  var track = root.querySelector('.carousel-track');
+  var slides = root.querySelectorAll('.carousel-slide');
+  var dots = root.querySelectorAll('.carousel-dots button');
+  var prev = root.querySelector('.carousel-nav.prev');
+  var next = root.querySelector('.carousel-nav.next');
+  var index = 0;
+  function sync() {
+    dots.forEach(function (d, n) { d.setAttribute('aria-current', n === index ? 'true' : 'false'); });
+    prev.style.visibility = index === 0 ? 'hidden' : 'visible';
+    next.style.visibility = index === slides.length - 1 ? 'hidden' : 'visible';
+  }
+  function go(i) {
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    sync();
+  }
+  prev.addEventListener('click', function () { go(index - 1); });
+  next.addEventListener('click', function () { go(index + 1); });
+  dots.forEach(function (d, n) { d.addEventListener('click', function () { go(n); }); });
+  var raf;
+  track.addEventListener('scroll', function () {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function () {
+      var nearest = Math.round(track.scrollLeft / slides[0].offsetWidth);
+      if (nearest !== index) { index = nearest; sync(); }
+    });
+  });
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(index - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(index + 1); }
+  });
+  sync();
+})();
 </script>
 
 </body>
